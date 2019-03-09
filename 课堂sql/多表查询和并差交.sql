@@ -87,3 +87,4 @@ WHERE  s_chn>=60
 MINUS  --从前面的结果集中减去两个结果中相同的记录
 SELECT S_ID,s_name,s_gender FROM stu
 WHERE s_math>=80;
+

@@ -59,3 +59,17 @@ SELECT t_name,t_entertime,EXTRACT(MONTH FROM t_entertime) FROM teacher to_char(t
 SELECT last_day(Sysdate) FROM dual;
 --5.next_day：获取当前日期之后的下一个周几
 SELECT next_day(SYSDATE,1) FROM dual;--注意周几的表示习惯
+--五。转换类函数
+--1.to_date
+--将指定的时间字符串转化为date类型
+SELECT to_date('1989-01-04 15:13:14','yyyy-mm-dd hh24:mi:ss') FROM dual;
+--2.to_char:将其他数据类型转换成字符串类型
+SELECT to_char(1234,'9,999') FROM dual;
+SELECT to_char(SYSDATE,'yyyy-mm-dd hh24:mi:ss') FROM dual;
+--3.to_number:将其他数值类型，转化为数值类型
+SELECT to_number('1234') FROM dual;
+--六。其他函数
+--1.decode：相当于if-else
+SELECT * FROM tea;
+SELECT t_name_new,t_gender,DECODE(t_gender,'male','领带','female','鲜花') gift FROM tea;
+
